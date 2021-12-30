@@ -125,6 +125,20 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
 
     public void testWassim()
     {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("achy",
+                "wassim", "2337n");
+        assertEquals("achy", auditeur1.nom());
+        assertEquals("wassim", auditeur1.prenom());
+        assertEquals("achy_w", auditeur1.login());
+    }
+    
+        public void test_Wassim_with_special_chars()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("a'c'h'''y",
+                "wassim", "2337n");
+        assertEquals("a'c'h'''y", auditeur1.nom());
+        assertEquals("wassim", auditeur1.prenom());
+        assertEquals("a_c_h__w", auditeur1.login());
     }
 }
 
